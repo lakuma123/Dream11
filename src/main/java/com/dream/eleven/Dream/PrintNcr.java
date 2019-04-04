@@ -89,6 +89,16 @@ static int matchingMembers(List<Integer> list,List<Integer> team){
 				teamCount++;
 			}
 			System.out.println(teamCount);
+			
+
+			List<String> names = Arrays.asList("dhoni", "dhawan", "kohli", "rohit", "raina", "jaddu", "ashwin", "bhuvi",
+					"bumrah", "kaul", "sharma", "decock", "warner", "abd", "lynn", "munro", "russel", "stokes", "tahir",
+					"tye", "malinga", "rashid");
+			List<String> type = Arrays.asList("wk", "bat", "bat", "bat", "bat", "ar", "ar", "bowl", "bowl", "bowl", "bowl",
+					"wk", "bat", "bat", "bat", "bat", "ar", "ar", "bowl", "bowl", "bowl", "bowl");
+			List<String> credits = Arrays.asList("10", "11", "9.5", "8.5", "8", "9", "8.5", "9.5", "8.5", "8.5", "8", 
+												"9","10", "9", "9", "8.5", "9", "8.5", "9", "8.5", "8.5", "8");
+			ProcessPlayerDetails.assignPlayers(names, type, credits,validTeams);
 		} 
 	} 
 

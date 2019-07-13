@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.honeywell.devicemanagement.entity.Device;
 import com.honeywell.devicemanagement.entity.DeviceType;
@@ -72,6 +73,15 @@ public class AdminAnalyticsController {
 		List<DeviceType> deviceTypes = deviceTypeRepository.findAll();
 		model.put("deviceTypes", deviceTypes);
 		return "deviceRegistration";
+	}
+	
+	@RequestMapping("/adminAnalyticsUserInformation")
+	public String adminAnalyticsUserInformation(Map<String, Object> model, @RequestParam("username") String username) {
+		List<Device> devices =deviceRepository.findByOwner_Username(username);
+		
+		
+		model.put("devices", devices);
+		return "AdminAnalyticsUserInformation";
 	}
 
 }

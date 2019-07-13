@@ -47,7 +47,7 @@ public class AdminAnalyticsController {
 		List<User> users =userRepository.findAll();
 		
 		
-		model.put("message", users);
+		model.put("users", users);
 		return "information";
 	}
 

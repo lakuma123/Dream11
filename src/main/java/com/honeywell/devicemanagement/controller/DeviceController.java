@@ -10,15 +10,14 @@ import com.honeywell.devicemanagement.entity.Device;
 import com.honeywell.devicemanagement.service.DeviceService;
 
 @Controller
-@RequestMapping(value = "/register")
 public class DeviceController {
 
 	@Autowired
 	DeviceService deviceService;
 	
-	@RequestMapping(method = RequestMethod.POST)
+	@RequestMapping(value = "/deviceRegister",method = RequestMethod.POST)
 	public String deviceRegister(@ModelAttribute("device")Device device) {
-		
+		deviceService.deviceRegistartion(device);
 		return "deviceRegistration";
 	}
 }

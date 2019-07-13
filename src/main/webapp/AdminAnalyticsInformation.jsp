@@ -264,6 +264,7 @@
 									<th>User Name</th>
 									<th>Device Name</th>
 									<th>Is Active</th>
+									<th>Last access</th>
 								</tr>
 							</thead>
 							<!-- Table head -->
@@ -276,6 +277,7 @@
 										<td scope="row">${device.owner.username}</td>
 										<td scope="row">${device.name}</td>
 										<td scope="row">${device.active}</td>
+										<td scope="row">${device.updateDate}</td>
 									</tr>
 								</c:forEach>
 

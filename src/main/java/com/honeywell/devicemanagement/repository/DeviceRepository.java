@@ -11,5 +11,6 @@ import com.honeywell.devicemanagement.entity.Device;
 public interface DeviceRepository extends JpaRepository<Device, Long> {
 
 	List<Device> findByActive(boolean flag);
+	List<Device> findByOwner_Username(String username);
 
 }

@@ -184,9 +184,7 @@
 							<thead class="blue-grey lighten-4">
 								<tr>
 									<th>User Name</th>
-									<th>Device Name</th>
-									<th>Is Active</th>
-									<th>Last access</th>
+									<th>Devices</th>
 								</tr>
 							</thead>
 							<!-- Table head -->
@@ -196,10 +194,8 @@
 
 								<c:forEach items="${devices}" var="device">
 									<tr>
-										<td scope="row"><a href="/adminAnalyticsUserInformation?username=${device.owner.username}">${device.owner.username}</a></td>
+										<td scope="row">${device.owner.username}</td>
 										<td scope="row">${device.name}</td>
-										<td scope="row">${device.active}</td>
-										<td scope="row">${device.updateDate}</td>
 									</tr>
 								</c:forEach>
 

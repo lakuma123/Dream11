@@ -1,16 +1,21 @@
 package com.honeywell.devicemanagement;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.honeywell.devicemanagement.entity.Device;
+import com.honeywell.devicemanagement.repository.DeviceRepository;
+
 @Controller
 public class AdminAnalyticsController {
 
+	@Autowired
+	DeviceRepository deviceRepository;
 
 	// inject via application.properties
 	@Value("${welcome.message:test}")
@@ -25,11 +30,10 @@ public class AdminAnalyticsController {
 	
 	@RequestMapping("/information")
 	public String devicesInformation(Map<String, Object> model) {
-		List<String> l1 = new ArrayList<>();
-		l1.add("test1");
-		l1.add("test2");
+		List<Device> activeDevices =deviceRepository.findByActive(true);
 		
-		model.put("message", l1);
+		
+		model.put("message", activeDevices);
 		return "information";
 	}
 

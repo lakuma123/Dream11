@@ -48,10 +48,21 @@ public class AdminAnalyticsController {
 
 	@RequestMapping("/userInformation")
 	public String usersInformation(Map<String, Object> model) {
-		List<User> users = userRepository.findAll();
 
-		model.put("message", users);
+		List<User> users =userRepository.findAll();
+		
+		
+		model.put("users", users);
 		return "information";
+	}
+	
+	@RequestMapping("/adminAnalyticsInformation")
+	public String adminAnalyticsInformation(Map<String, Object> model) {
+		List<Device> devices =deviceRepository.findAll();
+		
+		
+		model.put("devices", devices);
+		return "AdminAnalyticsInformation";
 	}
 
 	@RequestMapping("/deviceRegistrationLoad")

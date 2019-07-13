@@ -21,6 +21,10 @@ public class Device {
 
 	@ManyToOne
 	@JoinColumn
+	private DeviceType deviceType;
+
+	@ManyToOne
+	@JoinColumn
 	private User owner;
 
 	@Column

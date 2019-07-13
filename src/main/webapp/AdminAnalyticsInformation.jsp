@@ -165,6 +165,63 @@
 
 		</div>
 		<!-- Heading -->
+		
+		<!--Grid row-->
+		<div class="row wow fadeIn">
+
+			<!--Grid column-->
+			<div class="col-md-12 mb-4">
+
+				<!--Card-->
+				<div class="card">
+
+					<!--Card content-->
+					<div class="card-body">
+
+						<!-- Table  -->
+						<table class="table table-hover">
+							<!-- Table head -->
+							<thead class="blue-grey lighten-4">
+								<tr>
+									<th>User Name</th>
+									<th>Device Name</th>
+									<th>Is Active</th>
+									<th>Last access</th>
+								</tr>
+							</thead>
+							<!-- Table head -->
+
+							<!-- Table body -->
+							<tbody>
+
+								<c:forEach items="${devices}" var="device">
+									<tr>
+										<td scope="row">${device.owner.username}</td>
+										<td scope="row">${device.name}</td>
+										<td scope="row">${device.active}</td>
+										<td scope="row">${device.updateDate}</td>
+									</tr>
+								</c:forEach>
+
+
+
+							</tbody>
+							<!-- Table body -->
+						</table>
+						<!-- Table  -->
+
+					</div>
+
+				</div>
+				<!--/.Card-->
+
+			</div>
+			<!--Grid column-->
+
+
+
+		</div>
+		<!--Grid row-->
 
 		<!--Grid row-->
 		<div class="row wow fadeIn">
@@ -240,63 +297,6 @@
 
 			</div>
 			<!--Grid column-->
-
-		</div>
-		<!--Grid row-->
-
-		<!--Grid row-->
-		<div class="row wow fadeIn">
-
-			<!--Grid column-->
-			<div class="col-md-12 mb-4">
-
-				<!--Card-->
-				<div class="card">
-
-					<!--Card content-->
-					<div class="card-body">
-
-						<!-- Table  -->
-						<table class="table table-hover">
-							<!-- Table head -->
-							<thead class="blue-grey lighten-4">
-								<tr>
-									<th>User Name</th>
-									<th>Device Name</th>
-									<th>Is Active</th>
-									<th>Last access</th>
-								</tr>
-							</thead>
-							<!-- Table head -->
-
-							<!-- Table body -->
-							<tbody>
-
-								<c:forEach items="${devices}" var="device">
-									<tr>
-										<td scope="row">${device.owner.username}</td>
-										<td scope="row">${device.name}</td>
-										<td scope="row">${device.active}</td>
-										<td scope="row">${device.updateDate}</td>
-									</tr>
-								</c:forEach>
-
-
-
-							</tbody>
-							<!-- Table body -->
-						</table>
-						<!-- Table  -->
-
-					</div>
-
-				</div>
-				<!--/.Card-->
-
-			</div>
-			<!--Grid column-->
-
-
 
 		</div>
 		<!--Grid row-->

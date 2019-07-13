@@ -79,7 +79,7 @@
 							target="_blank">Free tutorials</a></li>
 					</ul>
 
-					<!-- Right -->
+					<%-- <!-- Right -->
 					<ul class="navbar-nav nav-flex-icons">
 						<li class="nav-item"><a
 							href="https://www.facebook.com/mdbootstrap"
@@ -97,7 +97,7 @@
 							target="_blank"> <i class="fab fa-github mr-2"></i>MDB GitHub
 						</a></li>
 					</ul>
-
+ --%>
 				</div>
 
 			</div>
@@ -140,15 +140,13 @@
 	<main class="pt-5 mx-lg-5">
 	<div class="container-fluid mt-5">
 
-	
-
 
 
 		<!--Grid row-->
 		<div class="row wow fadeIn">
 
 			<!--Grid column-->
-			<div class="col-md-12 mb-4">
+			<div class="col-md-9 mb-4">
 
 				<!--Card-->
 				<div class="card">
@@ -176,7 +174,7 @@
 									<tr>
 										<th scope="row">${user.id}</th>
 										<td>${user.username}</td>
-										<td>${user.userType}</td>
+										<td>${user.username}</td>
 										<td>${user.active}</td>
 									</tr>
 								</c:forEach>
@@ -196,10 +194,90 @@
 			</div>
 			<!--Grid column-->
 
+			<!--Grid column-->
+			<div class="col-md-3 mb-4">
+
+				<!--Card-->
+				<div class="card mb-4">
+
+					<!-- Card header -->
+					<div class="card-header text-center">Users</div>
+
+					<!--Card content-->
+					<div class="card-body">
+
+						<canvas id="pieChart"></canvas>
+
+					</div>
+
+				</div>
+				<!--/.Card-->
+
+				<!--Card-->
+				<div class="card mb-4">
+
+					<!--Card content-->
+					<div class="card-body">
+
+						<!-- List group links -->
+						<div class="list-group list-group-flush">
+							<a class="list-group-item list-group-item-action waves-effect">Sales
+								<span class="badge badge-success badge-pill pull-right">22%
+									<i class="fas fa-arrow-up ml-1"></i>
+							</span>
+							</a> <a class="list-group-item list-group-item-action waves-effect">Traffic
+								<span class="badge badge-danger badge-pill pull-right">5%
+									<i class="fas fa-arrow-down ml-1"></i>
+							</span>
+							</a> <a class="list-group-item list-group-item-action waves-effect">Orders
+								<span class="badge badge-primary badge-pill pull-right">14</span>
+							</a> <a class="list-group-item list-group-item-action waves-effect">Issues
+								<span class="badge badge-primary badge-pill pull-right">123</span>
+							</a> <a class="list-group-item list-group-item-action waves-effect">Messages
+								<span class="badge badge-primary badge-pill pull-right">8</span>
+							</a>
+						</div>
+						<!-- List group links -->
+
+					</div>
+
+				</div>
+				<!--/.Card-->
+
+			</div>
+			<!--Grid column-->
 
 
 		</div>
 		<!--Grid row-->
+
+		<!--Grid row-->
+		<div class="row wow fadeIn">
+
+			<!--Grid column-->
+			<div class="col-md-9 mb-4">
+
+				<!--Card-->
+				<div class="card">
+
+					<!--Card content-->
+					<div class="card-body">
+
+						<canvas id="myChart"></canvas>
+
+					</div>
+
+				</div>
+				<!--/.Card-->
+
+			</div>
+			<!--Grid column-->
+
+
+		</div>
+		<!--Grid row-->
+
+
 
 		<!--Grid row-->
 		<div class="row wow fadeIn">
@@ -1240,13 +1318,11 @@
 		var myPieChart = new Chart(ctxP, {
 			type : 'pie',
 			data : {
-				labels : [ "Red", "Green", "Yellow", "Grey", "Dark Grey" ],
+				labels : [ "Active", "In Active" ],
 				datasets : [ {
-					data : [ 300, 50, 100, 40, 120 ],
-					backgroundColor : [ "#F7464A", "#46BFBD", "#FDB45C",
-							"#949FB1", "#4D5360" ],
-					hoverBackgroundColor : [ "#FF5A5E", "#5AD3D1", "#FFC870",
-							"#A8B3C5", "#616774" ]
+					data : [ 4, 2 ],
+					backgroundColor : [ "#F7464A", "#46BFBD" ],
+					hoverBackgroundColor : [ "#FF5A5E", "#5AD3D1" ]
 				} ]
 			},
 			options : {

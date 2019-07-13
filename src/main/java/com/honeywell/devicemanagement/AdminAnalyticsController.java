@@ -6,11 +6,14 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.honeywell.devicemanagement.entity.Device;
+import com.honeywell.devicemanagement.entity.DeviceType;
 import com.honeywell.devicemanagement.entity.User;
 import com.honeywell.devicemanagement.repository.DeviceRepository;
+import com.honeywell.devicemanagement.repository.DeviceTypeRepository;
 import com.honeywell.devicemanagement.repository.UserRepository;
 
 @Controller
@@ -18,9 +21,12 @@ public class AdminAnalyticsController {
 
 	@Autowired
 	DeviceRepository deviceRepository;
-	
+
 	@Autowired
 	UserRepository userRepository;
+
+	@Autowired
+	DeviceTypeRepository deviceTypeRepository;
 
 	// inject via application.properties
 	@Value("${welcome.message:test}")
@@ -31,26 +37,30 @@ public class AdminAnalyticsController {
 		model.put("message", this.message);
 		return "welcome";
 	}
-	
-	
+
 	@RequestMapping("/information")
 	public String devicesInformation(Map<String, Object> model) {
-		List<Device> activeDevices =deviceRepository.findByActive(true);
-		
-		
+		List<Device> activeDevices = deviceRepository.findByActive(true);
+
 		model.put("message", activeDevices);
 		return "information";
 	}
-	
+
 	@RequestMapping("/userInformation")
 	public String usersInformation(Map<String, Object> model) {
-		List<User> users =userRepository.findAll();
-		
-		
+		List<User> users = userRepository.findAll();
+
 		model.put("message", users);
 		return "information";
 	}
 
-
+	@RequestMapping("/deviceRegistrationLoad")
+	public String deviceRegistrationLoad(ModelMap model) {
+		Device device = new Device();
+		model.addAttribute("device", device);
+		List<DeviceType> deviceTypes = deviceTypeRepository.findAll();
+		model.put("deviceTypes", deviceTypes);
+		return "deviceRegistration";
+	}
 
 }

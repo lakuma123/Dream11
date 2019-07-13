@@ -36,6 +36,7 @@
 		<div class="starter-template">
 			<h1>Spring Boot Web JSP Example</h1>
 			<h2>Message: ${message}</h2>
+			<a href="/deviceRegistrationLoad">Device Registration</a>
 		</div>
 
 	</div>

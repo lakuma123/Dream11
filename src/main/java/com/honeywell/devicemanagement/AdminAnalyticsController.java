@@ -50,6 +50,15 @@ public class AdminAnalyticsController {
 		model.put("users", users);
 		return "information";
 	}
+	
+	@RequestMapping("/adminAnalyticsInformation")
+	public String adminAnalyticsInformation(Map<String, Object> model) {
+		List<Device> devices =deviceRepository.findAll();
+		
+		
+		model.put("devices", devices);
+		return "AdminAnalyticsInformation";
+	}
 
 
 

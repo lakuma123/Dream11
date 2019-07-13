@@ -69,10 +69,10 @@ position:absolute;
     <div class="sidebar-fixed position-fixed">
 
       <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item active waves-effect">
+        <a href="/adminAnalyticsInformation" class="list-group-item active waves-effect">
           <i class="fas fa-chart-pie mr-3"></i>Admin Dashboard
         </a>
-         <a href="#" class="list-group-item active waves-effect">
+         <a href="/userInformation" class="list-group-item active waves-effect">
           <i class="fas fa-chart-pie mr-3"></i>User Dashboard
         </a>
       </div>

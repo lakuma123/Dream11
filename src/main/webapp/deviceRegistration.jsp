@@ -8,7 +8,7 @@
           action="/deviceRegister" modelAttribute="device"  >
              <table>
                 <tr>
-                   <td>Name:<td>
+                   <td>Name:</td>
                     <td><form:input path="name"/></td>
                 </tr>
                 <tr>
@@ -22,10 +22,10 @@
                 </tr>
                 <tr> --%>
                 
-             <%--     <tr>
+              <tr>
                     <td>Device Types:</td>
                     <td><form:select multiple="true" path="deviceType" items="${deviceTypes.name}" /></td>
-                </tr> --%>
+                </tr>
                     <td><input type="submit" value="Submit"/></td>
                 </tr>
             </table>

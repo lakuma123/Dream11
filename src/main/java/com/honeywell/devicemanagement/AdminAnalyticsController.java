@@ -9,13 +9,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.honeywell.devicemanagement.entity.Device;
+import com.honeywell.devicemanagement.entity.User;
 import com.honeywell.devicemanagement.repository.DeviceRepository;
+import com.honeywell.devicemanagement.repository.UserRepository;
 
 @Controller
 public class AdminAnalyticsController {
 
 	@Autowired
 	DeviceRepository deviceRepository;
+	
+	@Autowired
+	UserRepository userRepository;
 
 	// inject via application.properties
 	@Value("${welcome.message:test}")
@@ -34,6 +39,15 @@ public class AdminAnalyticsController {
 		
 		
 		model.put("message", activeDevices);
+		return "information";
+	}
+	
+	@RequestMapping("/userInformation")
+	public String usersInformation(Map<String, Object> model) {
+		List<User> users =userRepository.findAll();
+		
+		
+		model.put("message", users);
 		return "information";
 	}
 

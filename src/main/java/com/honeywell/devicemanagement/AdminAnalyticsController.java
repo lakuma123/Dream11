@@ -78,9 +78,7 @@ public class AdminAnalyticsController {
 	
 	@RequestMapping("/adminAnalyticsUserInformation")
 	public String adminAnalyticsUserInformation(Map<String, Object> model, @RequestParam("username") String username) {
-		List<Device> devices =deviceRepository.findByOwner_Username(username);
-		
-		
+		List<Device> devices =deviceRepository.findByOwner_Username(username);	
 		model.put("devices", devices);
 		return "AdminAnalyticsUserInformation";
 	}
